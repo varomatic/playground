@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+            /*basic animation*/
+            .color-change{
+                background-color:red;
+                /*short hand for multiple transition*/
+                /*transition: background-color 2s,font-size 2s;*/
+                transition-property: background-color, font-size,letter-spacing,padding;
+                transition-duration: 2s,2s;
+                transition-delay: 550ms,550mx;
+                transition-timing-function:ease;
+            }
+            .color-change:hover{background-color:grey; font-size:24px;letter-spacing:10px;}
+            .add-padding{padding:40px;}
+            
+            /*keyframe animation*/
+            @-webkit-keyframes 'keyframe1'{
+                from{background:red;}
+                50%{background:blue;}
+                to{background:red;}
+            }
+            
+            #transition2{
+                -webkit-animation-name:'keyframe1'; 
+                 -webkit-animation-duration: 6s; 
+                -webkit-animation-iteration-count: infinite;
+                 -webkit-animation-play-state: running;
+                  -webkit-animation-direction: alternate; 
+                border:2px solid black;
+                padding:20px;
+                
+            }
+            #transition2:hover { -webkit-animation-play-state: paused; }
+        </style>
+
+    </head>
+
+    <body>
+        <div id='transition1' class="color-change">colorchange</div>
+        <button>animate</button>
+        <div id="transition2">Keyframe animation</div>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('button').click(function () {
+                    $('#transition1').toggleClass('add-padding');
+                });
+            });
+        </script>
+    </body>
+
+</html>

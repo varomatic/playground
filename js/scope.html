@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            var obj = {
+                'hi': 'hellow',
+                'bye': 'bb',
+                'thanks': 'cheers'
+
+            };
+
+            function obj() {
+            }
+
+            obj['phone'] = 'fong';
+            //looping object
+//            for (var i in obj)
+//                console.log(obj.prototype);
+            function inherit(obj) {
+
+                if (obj == null)
+                    throw TypeError();
+                if (Object.create)
+                    return Object.creat(obj);
+                var t = typeof p;
+                if (t !== "object" && t !== "function")
+                    throw TypeError();
+                function f() {
+                }
+                f.prototype = obj;
+                return new f();
+            }
+
+            function foo() {
+                this.a = 3;
+                console.log(this.b);
+                return this;
+            }
+            foo.prototype.b = 4;
+            var bar = new foo();
+            console.log(new foo());
+            var klass = {
+                constructor: function () {
+                },
+                init:function(){}
+                config: {},
+                private: {},
+                create: function (name, obj) {
+                    this.init();
+                    return this;
+                },
+                define: function (name, config) {
+                    this.config = config || {};
+                }
+            };
+
+        </script>
+    </head>
+
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
